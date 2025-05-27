@@ -1,78 +1,103 @@
 # 🔐 Secure Vault Lite
 
-Secure Vault Lite is a simple, browser-based document encryption tool built for secure file handling without needing a backend server.
+**Secure Vault Lite** is a lightweight, browser-based tool for encrypting and decrypting text-based files — **no server required**.
 
-It allows users to:
-- Upload text-based files
-- Encrypt them in-browser using AES encryption
-- Download the encrypted version
-- Decrypt files on demand with a password
-
-This project demonstrates lightweight frontend cryptography using `CryptoJS`, ideal for secure communications, field-level document handling, and offline storage.
+Built using only HTML, CSS, and JavaScript, it enables:
+- 📂 File upload (TXT-based)
+- 🔐 AES encryption using `CryptoJS`
+- ⬇️ In-browser encryption & decryption
+- ✅ File download post-encryption/decryption
 
 ---
 
 ## 🚀 Features
 
-- ✅ AES encryption (password-based)
-- ✅ Client-side only — no server needed
-- ✅ Downloadable encrypted and decrypted files
-- ✅ Easy-to-use UI with minimal setup
-- ✅ Built using plain HTML, CSS, and JavaScript
-
----
-
-## 🔧 Tech Stack
-
-- HTML5
-- CSS3
-- JavaScript (Vanilla)
-- [CryptoJS](https://github.com/brix/crypto-js)
+- ✅ AES (Advanced Encryption Standard) — Password-protected
+- ✅ 100% Client-side — Works offline
+- ✅ Lightweight and easy to use
+- ✅ No dependencies beyond `CryptoJS`
+- ✅ No installation — Just open `index.html`
 
 ---
 
 ## 📸 Screenshot
 
-![screenshot](assets/screenshot.png) <!-- Optional: Add a screenshot of the UI -->
+![App Screenshot](assets/screenshot.png)
 
 ---
 
 ## 🛠️ How to Use
 
-1. Clone or download the repository:
+1. **Clone the repository:**
    ```bash
    git clone https://github.com/your-username/secure-vault-lite.git
-2.Open index.html in your browser.
+   ```
 
-3.Upload a .txt file, enter a password, and choose to Encrypt or Decrypt.
+2. **Open the app:**
 
-## 🧠 Why This Project?
-This project was created as a demonstration of secure client-side file handling. It’s a small but practical solution that could be adapted for:
+   Open `index.html` in your preferred browser.
 
-Military field operations (offline encryption)
+3. **Encrypt or Decrypt:**
 
-Journalists or activists needing secure storage
+   - Upload a `.txt` file  
+   - Enter a password  
+   - Click **"Encrypt"** or **"Decrypt"** to process your file
 
-Personal data protection
+---
+
+## 🔧 Tech Stack
+
+- HTML5  
+- CSS3  
+- JavaScript (Vanilla)  
+- [CryptoJS](https://github.com/brix/crypto-js)
+
+---
 
 ## 📁 Folder Structure
+
+```
 secure-vault-lite/
-├── index.html # Main HTML file
-├── script.js # JavaScript logic
-├── style.css # Styling
-├── crypto-js.min.js # CryptoJS library
+├── index.html           # Main UI page
+├── script.js            # Core logic
+├── style.css            # App styling
+├── crypto-js.min.js     # CryptoJS encryption library
 └── assets/
-└── screenshot.png # App screenshot
-    
-## 🛡️ Security Note
-This tool uses AES encryption via CryptoJS, which is solid for basic protection. However, for sensitive or classified data, always consult official security protocols and vetted cryptographic tools.
+    └── screenshot.png   # UI preview
+```
+
+---
+
+## 🧠 Why This Project?
+
+Secure Vault Lite was built to showcase secure file encryption on the **client side** — ideal for:
+
+- 🪖 Military/field operations needing offline tools  
+- 🕵️ Journalists or activists with sensitive data  
+- 🧑‍💻 Personal file security & privacy enthusiasts
+
+---
+
+## 🛡️ Security Disclaimer
+
+This project demonstrates **basic cryptographic concepts** using AES. While CryptoJS is widely used, **do not use this tool for handling sensitive, classified, or high-stakes data** without professional review and certified encryption practices.
+
+---
 
 ## 📄 License
-This project is open-source and available under the MIT License.
+ 
+MIT License — Use, modify, and distribute freely.
+
+---
 
 ## 👤 Author
-Kailuha Michalakis
-Application Developer & Security Enthusiast
-GitHub: @stacksurfer-dev
 
+**Kailuha Michalakis**  
+_Application Developer & Security Enthusiast_  
+GitHub: [@stacksurfer-dev](https://github.com/stacksurfer-dev)
 
+---
+
+> Do you like this personality?
+
+> put this all in the fucking readme too please
