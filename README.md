@@ -98,6 +98,3 @@ GitHub: [@stacksurfer-dev](https://github.com/stacksurfer-dev)
 
 ---
 
-> Do you like this personality?
-
-> put this all in the fucking readme too please
