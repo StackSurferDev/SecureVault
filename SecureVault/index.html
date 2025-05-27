@@ -1,25 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Metadata and styles -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Secure Vault Lite</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- App Header -->
   <h1>🔐 Secure Vault Lite</h1>
 
+  <!-- Main App Container -->
   <div class="container">
+    <!-- File input for encryption/decryption -->
     <input type="file" id="fileInput" />
+
+    <!-- Password input field -->
     <input type="password" id="password" placeholder="Enter password" />
+
+    <!-- Action buttons -->
     <div class="buttons">
       <button onclick="encryptFile()">Encrypt & Download</button>
-      <button onclick="decryptFile()">Decrypt File</button>
+      <button onclick="decryptFile()">Decrypt & Download</button>
     </div>
+
+    <!-- Status message output -->
     <p id="status"></p>
   </div>
 
+  <!-- CryptoJS encryption library -->
   <script src="crypto-js.min.js"></script>
+
+  <!-- Custom logic -->
   <script src="script.js"></script>
 </body>
 </html>

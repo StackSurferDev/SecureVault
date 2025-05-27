@@ -1,3 +1,4 @@
+// Encrypt any file with embedded metadata (filename + mime type)
 function encryptFile() {
   const file = document.getElementById('fileInput').files[0];
   const password = document.getElementById('password').value;
@@ -5,14 +6,25 @@ function encryptFile() {
 
   if (!file || !password) {
     status.textContent = "⚠️ Please select a file and enter a password.";
+    status.className = "error";
     return;
   }
 
   const reader = new FileReader();
   reader.onload = function (e) {
-    const content = e.target.result;
-    const encrypted = CryptoJS.AES.encrypt(content, password).toString();
+    const base64Data = e.target.result;
 
+    // Wrap metadata in a JSON envelope
+    const envelope = JSON.stringify({
+      filename: file.name,
+      mime: file.type || 'application/octet-stream',
+      data: base64Data
+    });
+
+    // Encrypt the envelope
+    const encrypted = CryptoJS.AES.encrypt(envelope, password).toString();
+
+    // Create encrypted blob for download
     const blob = new Blob([encrypted], { type: 'text/plain' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
@@ -20,10 +32,13 @@ function encryptFile() {
     a.click();
 
     status.textContent = "✅ File encrypted and downloaded.";
+    status.className = "success";
   };
-  reader.readAsText(file);
+
+  reader.readAsDataURL(file); // Read as base64
 }
 
+// Decrypt and restore any file using embedded metadata
 function decryptFile() {
   const file = document.getElementById('fileInput').files[0];
   const password = document.getElementById('password').value;
@@ -31,6 +46,7 @@ function decryptFile() {
 
   if (!file || !password) {
     status.textContent = "⚠️ Please select a file and enter a password.";
+    status.className = "error";
     return;
   }
 
@@ -38,20 +54,38 @@ function decryptFile() {
   reader.onload = function (e) {
     try {
       const encrypted = e.target.result;
-      const decrypted = CryptoJS.AES.decrypt(encrypted, password).toString(CryptoJS.enc.Utf8);
+      const decryptedJson = CryptoJS.AES.decrypt(encrypted, password).toString(CryptoJS.enc.Utf8);
 
-      if (!decrypted) throw new Error("Wrong password or corrupted file.");
+      // Parse the decrypted envelope
+      const envelope = JSON.parse(decryptedJson);
+      const { filename, mime, data } = envelope;
 
-      const blob = new Blob([decrypted], { type: 'text/plain' });
+      if (!data || !data.startsWith('data:')) {
+        throw new Error("Invalid file structure.");
+      }
+
+      // Extract base64 content and convert to binary
+      const base64Parts = data.split(',');
+      const byteString = atob(base64Parts[1]);
+      const byteArray = new Uint8Array(byteString.length);
+      for (let i = 0; i < byteString.length; i++) {
+        byteArray[i] = byteString.charCodeAt(i);
+      }
+
+      // Recreate original file
+      const blob = new Blob([byteArray], { type: mime });
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
-      a.download = file.name.replace('.enc', '.decrypted.txt');
+      a.download = filename;
       a.click();
 
-      status.textContent = "✅ File decrypted and downloaded.";
+      status.textContent = `✅ File "${filename}" decrypted and downloaded.`;
+      status.className = "success";
     } catch (err) {
       status.textContent = "❌ Decryption failed: " + err.message;
+      status.className = "error";
     }
   };
-  reader.readAsText(file);
+
+  reader.readAsText(file); // Read encrypted text
 }

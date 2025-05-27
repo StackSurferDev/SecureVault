@@ -1,47 +1,89 @@
+/* Set up global styles and background */
 body {
-  background-color: #0f172a;
-  color: #f8fafc;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  padding: 40px;
-}
-
-.container {
+  margin: 0;
+  font-family: 'Courier New', monospace; /* Military/terminal style font */
+  background-color: #0b0f17; /* Dark navy background */
+  color: #00ff88; /* Neon green text */
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 40px 20px;
+  min-height: 100vh;
 }
 
+/* Heading styling */
+h1 {
+  font-size: 28px;
+  letter-spacing: 2px;
+  border-bottom: 2px solid #00ff88;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+/* Main container box */
+.container {
+  background-color: #111827;
+  padding: 30px;
+  border: 1px solid #00ff88;
+  border-radius: 0;
+  box-shadow: 0 0 12px rgba(0, 255, 136, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Input fields */
 input[type="file"],
 input[type="password"] {
-  margin: 10px;
+  margin: 12px 0;
   padding: 10px;
   font-size: 16px;
-  border-radius: 6px;
-  border: none;
-  width: 250px;
+  background-color: #0f172a;
+  color: #00ff88;
+  border: 1px solid #00ff88;
+  width: 100%;
+  outline: none;
 }
 
-.buttons {
-  margin-top: 10px;
+/* Placeholder color */
+input::placeholder {
+  color: #4ade80;
+  opacity: 0.7;
 }
 
+/* Button styling */
 button {
-  margin: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #3b82f6;
-  color: white;
+  background-color: #00ff88;
+  color: #0b0f17;
+  font-weight: bold;
   border: none;
-  border-radius: 6px;
+  padding: 10px 20px;
+  margin: 10px 5px;
+  font-size: 15px;
+  text-transform: uppercase;
+  width: 100%;
   cursor: pointer;
+  border-radius: 0;
+  transition: background 0.2s ease;
 }
 
+/* Hover effect */
 button:hover {
-  background-color: #2563eb;
+  background-color: #4ade80;
 }
 
+/* Status messages */
 #status {
   margin-top: 20px;
-  font-style: italic;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Success and error colors */
+#status.success {
+  color: #22c55e;
+}
+
+#status.error {
+  color: #ef4444;
 }
