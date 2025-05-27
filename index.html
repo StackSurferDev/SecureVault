@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Secure Vault Lite</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>🔐 Secure Vault Lite</h1>
+
+  <div class="container">
+    <input type="file" id="fileInput" />
+    <input type="password" id="password" placeholder="Enter password" />
+    <div class="buttons">
+      <button onclick="encryptFile()">Encrypt & Download</button>
+      <button onclick="decryptFile()">Decrypt File</button>
+    </div>
+    <p id="status"></p>
+  </div>
+
+  <script src="crypto-js.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
