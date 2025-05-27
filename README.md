@@ -22,7 +22,8 @@ Built using only HTML, CSS, and JavaScript, it enables:
 
 ## 📸 Screenshot
 
-![App Screenshot](assets/screenshot.png)
+<img width="1115" alt="image" src="https://github.com/user-attachments/assets/a6a1de1e-4bfc-4e1b-b33d-3c8696e14b1c" />
+
 
 ---
 
