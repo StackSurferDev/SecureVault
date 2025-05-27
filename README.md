@@ -42,11 +42,11 @@ This project demonstrates lightweight frontend cryptography using `CryptoJS`, id
 1. Clone or download the repository:
    ```bash
    git clone https://github.com/your-username/secure-vault-lite.git
-#Open index.html in your browser.
+# Open index.html in your browser.
 
-#Upload a .txt file, enter a password, and choose to Encrypt or Decrypt.
+# Upload a .txt file, enter a password, and choose to Encrypt or Decrypt.
 
-##🧠 Why This Project?
+## 🧠 Why This Project?
 This project was created as a demonstration of secure client-side file handling. It’s a small but practical solution that could be adapted for:
 
 Military field operations (offline encryption)
@@ -55,7 +55,7 @@ Journalists or activists needing secure storage
 
 Personal data protection
 
-##📁 Folder Structure
+## 📁 Folder Structure
 secure-vault-lite/
 ├── index.html
 ├── script.js
@@ -64,13 +64,13 @@ secure-vault-lite/
 └── assets/
     └── screenshot.png
     
-##🛡️ Security Note
+## 🛡️ Security Note
 This tool uses AES encryption via CryptoJS, which is solid for basic protection. However, for sensitive or classified data, always consult official security protocols and vetted cryptographic tools.
 
-##📄 License
+## 📄 License
 This project is open-source and available under the MIT License.
 
-##👤 Author
+## 👤 Author
 Kailuha Michalakis
 Application Developer & Security Enthusiast
 GitHub: @stacksurfer-dev
